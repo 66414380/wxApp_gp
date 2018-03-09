@@ -1,0 +1,89 @@
+@import "../../template/resourceList/resourceList.wxss";
+.top {
+  height: 88rpx;
+  border-bottom: 1px solid #E7E7E7;
+  box-sizing: border-box;
+}
+.topFont{
+  font-size: 22rpx
+}
+.top_bar{
+  width: 112rpx;
+  height: 6rpx;
+  margin-top: 12rpx;
+  background-color: #FA1301
+}
+.top_bar_no{
+  width: 112rpx;
+  height: 18rpx;
+}
+.top_cell{
+  margin-bottom: 14rpx;
+}
+.title{
+  padding: 0 40rpx;
+}
+.titleFont{
+  font-size: 28rpx
+}
+.titleFont2{
+  font-size: 22rpx
+}
+.m_t{
+  margin-top: 20rpx
+}
+
+.window_title{
+  margin: 40rpx 0 45rpx 0
+}
+
+.input_border{
+  width: 80%;
+  height: 74rpx;
+  border: 1px solid #E7E7E7
+}
+.input_text{
+  width:120rpx;
+  text-align: center
+}
+.placeholder{
+  font-size: 24rpx;
+  color: #999999;
+  font-weight: 100
+}
+.m_t24{
+  margin-top: 24rpx
+}
+.input_border2{
+  width: 80%;
+}
+.input_border_2{
+  width: 65%;
+  height: 74rpx;
+  border: 1px solid #E7E7E7
+}
+
+.va{
+  width: 35%;
+  height: 74rpx;
+  border: 1px solid #FA1301
+}
+
+.input_text_2{
+  width:120rpx;
+  text-align: center
+}
+.va_input{
+  width:80%
+}
+
+.button{
+    width: 80%;
+    margin-top: 36rpx;
+    height: 74rpx;
+    background-color: #FA1301
+}
+.button_font{
+  font-size: 28rpx;
+  color: white
+}

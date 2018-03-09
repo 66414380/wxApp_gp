@@ -1,0 +1,35 @@
+.title_date{
+  margin: 0 0 12rpx 40rpx
+}
+.title_r{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end
+}
+.item{
+  padding: 0 20rpx;
+  background-color: white;
+  height: 134rpx
+}
+.item_mt{
+  padding-top: 40rpx;
+}
+
+.split{
+  margin-top: 26rpx
+}
+
+.item_3{
+  height: 178rpx;
+  background-color: white
+}
+.item_3_l{
+  padding-left: 40rpx
+}
+.item_3_r{
+    padding-right: 40rpx
+
+}
+.split_3{
+  border-bottom: 1px solid #E7E7E7
+}

@@ -1,0 +1,70 @@
+<view class="container flex_f">
+  <view class='flex_ec top'>
+    <block wx:for="{{topList}}" wx:for-index="i" wx:key="i">
+      <view class='flex_1 flex flex_f top_cell' bindtap='clickTop' data-id="{{i}}">
+        <text class='topFont' style="color:{{(selected == i)? '#FA1301' : ''}}">{{item.name}}</text>
+        <view class='top_bar' wx:if='{{selected === i}}'></view>
+        <view class='top_bar_no' wx:if='{{selected !== i}}'></view>
+      </view>
+    </block>
+  </view>
+
+  <view class="flex_r title">
+    <view class="flex_2">
+      <view class="flex_f m_t">
+        <text class='titleFont'>本月</text>
+        <text class='titleFont2 color_9'>消费32笔，合计￥888元</text>
+      </view>
+    </view>
+    <view class="flex_1 title_r m_t">
+      <view class="flex_ec">
+        <text class='titleFont2 color_9 margin_r_10'>自定义查询</text>
+        <image style="width: 50rpx; height: 50rpx; background-color: #eeeeee;" mode="widthFix" src="{{src}}"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="flex_1" style='overflow:auto'>
+    <scroll-view scroll-y="true" class='height_100' bindscrolltolower="lower">
+      <import src="../../template/resourceList/resourceList" />
+      <template is="resourceList" data="{{selected,list1}}" />
+    </scroll-view>
+  </view>
+
+
+  <view bindtap='close' style="display:{{display}};height: {{height}}px; width: {{width}}px;background-color: #C2C2C2;position: absolute;left: 0;top: 0;z-index: 100;background-color:rgba(0,0,0,.5)">
+    <view catchtap='touchWindow' style="width:80%;height:418rpx;position:fixed;z-index:111;border-radius:10rpx;background-color:white;top: {{top}}px; left: {{left}}px;">
+
+      <text class="window_title font_24 flex">请输入手机号后查看您的外卖订单</text>
+      <view class='width_100 flex flex_f'>
+        <view class='input_border flex_a'>
+          <text class='font_24 input_text'>手机号</text>
+          <input placeholder='请输入手机号' placeholder-class='placeholder'></input>
+        </view>
+
+        <view class='m_t24 input_border2 flex_a'>
+          <view class='input_border_2 flex_a'>
+            <text class='font_24 input_text'>验证码</text>
+            <input placeholder='请输入验证码' placeholder-class='placeholder' class='va_input'></input>
+          </view>
+          <view class='margin_l_10 va flex' catchtap='va'>
+            <text class='font_24 color'>获取验证码</text>
+          </view>
+        </view>
+
+        <view class='button flex' catchtap='submit'>
+          <text class='button_font'>确认</text>
+        </view>
+
+      </view>
+
+
+
+
+
+
+    </view>
+  </view>
+
+
+</view>

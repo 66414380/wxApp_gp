@@ -1,0 +1,45 @@
+<view class='detailContainer'>
+  <view class='flex flex_f top'>
+    <image style="width: 88rpx; height: 88rpx; background-color: #eeeeee;margin-top:40rpx" mode="widthFix" src="{{src}}"></image>
+    <text class='font_36 top_font'>九毛九</text>
+  </view>
+
+  <view bindtap="showHandle" data-id='0' class="flex_sb h">
+    <view>
+      <text class='font_36 color_9'>商品</text>
+    </view>
+    <view class="{{(display[0])?'arrow-up':'arrow-down'}}"></view>
+  </view>
+
+  <view wx:if='{{display[0]}}' class='item'>
+    <view class='cell'>
+      <block wx:for="{{list}}" wx:for-index="i" wx:key="i">
+        <view class="item_cell flex_a font_36">
+          <text class='flex_1'>{{item.name}}</text>
+          <text class='flex_1 flex'>X{{item.number}}</text>
+          <text class='flex_1 flex_ce color_9'>￥{{item.price}}</text>
+        </view>
+      </block>
+    </view>
+    <view class='flex_ce'>
+      <text class='font_36 cell_footer'>实付：￥188.00</text>
+    </view>
+  </view>
+
+  <view bindtap="showHandle" data-id='1' class="flex_sb h">
+    <view>
+      <text class='font_36 color_9'>订单</text>
+    </view>
+    <view class="{{(display[1])?'arrow-up':'arrow-down'}}"></view>
+  </view>
+  <view wx:if='{{display[1]}}'>
+    <block wx:for="{{list1}}" wx:for-index="i" wx:key="i">
+      <view class="item_cell flex_s font_36">
+        <text class='flex_1'>{{item.name}}</text>
+        <text class='flex_2 flex_s color_9 right'>￥{{item.price}}</text>
+      </view>
+    </block>
+  </view>
+
+
+</view>

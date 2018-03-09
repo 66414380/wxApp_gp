@@ -1,0 +1,49 @@
+.detailContainer{
+  height: 100%;
+  margin: 0 20rpx;
+  background-color: white;
+}
+.top{
+  margin-top: 40rpx;
+  border-bottom: 1px solid #E7E7E7;
+}
+.top_font{
+  margin-top: 24rpx;
+  margin-bottom: 54rpx;
+}
+
+.h{
+   margin-top:40rpx;
+
+}
+
+.arrow-up {
+    width:0; 
+    height:0; 
+    border-left:15rpx solid transparent;
+    border-right:15rpx solid transparent;
+    border-bottom:20rpx solid #7F7F7F;
+}
+.arrow-down {
+    width:0; 
+    height:0; 
+    border-left:15rpx solid transparent;
+    border-right:15rpx solid transparent;
+    border-top:20rpx solid #7F7F7F;
+}
+.item{
+  border-bottom: 1px solid #E7E7E7;
+}
+.cell{
+  padding-bottom: 50rpx;
+  border-bottom: 1px solid #E7E7E7;
+}
+.cell_footer{
+  height: 60rpx
+}
+.item_cell{
+  margin-top: 26rpx
+}
+.right{
+  text-align: right
+}

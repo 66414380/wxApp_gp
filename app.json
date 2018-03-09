@@ -1,0 +1,13 @@
+{
+  "pages":[
+   "pages/purchaseList/purchaseList",
+    "pages/orderDetail/orderDetail"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F4F4F4",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

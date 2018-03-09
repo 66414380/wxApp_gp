@@ -1,0 +1,77 @@
+<template name="resourceList">
+  <block wx:for="{{list1}}" wx:for-index="i" wx:key="i" wx:if="{{selected === 0}}">
+    <view class="item_mt">
+      <text class='title_date titleFont2 color_9'>2018/2/28</text>
+      <view class="item flex_a ">
+        <view class="flex">
+          <image style="width: 88rpx; height: 88rpx; background-color: #eeeeee;" mode="widthFix" src="{{src}}"></image>
+        </view>
+        <view class="flex_sb width_100 margin_l_10">
+          <view class='flex_f'>
+            <text class='font_24'>{{item.name}}</text>
+            <text class='font_18 color_9 split'>{{item.subName}}</text>
+          </view>
+          <view>
+            <text class='font_48'>￥{{item.price}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </block>
+
+  <block wx:for="{{list1}}" wx:for-index="i" wx:key="i" wx:if="{{selected === 1}}">
+    <view class="item_mt">
+      <text class='title_date titleFont2 color_9'>2018/2/28</text>
+      <view class="item flex_a ">
+        <view class="flex">
+          <image style="width: 88rpx; height: 88rpx; background-color: #eeeeee;" mode="widthFix" src="{{src}}"></image>
+        </view>
+        <view class="flex_sb width_100 margin_l_10">
+          <view class='flex_f'>
+            <text class='font_24'>{{item.name}}</text>
+          </view>
+          <view class='flex_a'>
+            <image style="width: 50rpx; height: 50rpx; background-color: #eeeeee;" mode="widthFix" src="{{src}}"></image>
+            <text class='font_48'>￥{{item.price}}</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </block>
+
+  <block wx:for="{{list1}}" wx:for-index="i" wx:key="i" wx:if="{{selected === 2}}">
+    <view class="item_mt">
+      <text class='title_date titleFont2 color_9'>2018/2/28</text>
+      <view class="item_3 flex_r ">
+        <view class="flex_3 flex_f flex_a height_100">
+          <view class='height_100 width_100 flex_a color_9 split_3'>
+            <view>
+              <text class='font_18 item_3_l'>付款方：</text>
+              <text class='font_24'>鉁</text>
+            </view>
+          </view>
+          <view class='height_100 width_100 flex_a color_9'>
+            <view>
+              <text class='font_18 item_3_l'>收款方：</text>
+              <text class='font_24'>金金金多</text>
+            </view>
+          </view>
+        </view>
+
+
+        <view class="flex_1 flex_ce item_3_r">
+
+          <view class='flex_f flex'>
+            <text class='font_18 color_9'>发票金额</text>
+            <text class='font_48'>￥{{item.price}}</text>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+  </block>
+
+</template>

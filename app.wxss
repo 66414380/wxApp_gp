@@ -29,6 +29,7 @@ text{font-weight: 100}
 .margin_t_10{margin-top:20rpx}
 .margin_b_10{margin-bottom:20rpx}
 .margin_tm_10{margin:20rpx 0}
+.margin_lr_10{margin:0 20rpx}
 .margin_l_10{margin-left:20rpx}
 .margin_r_10{margin-right:20rpx}
 .padding_10{padding: 20rpx}

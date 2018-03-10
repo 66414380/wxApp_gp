@@ -40,7 +40,8 @@
 .input_border{
   width: 80%;
   height: 74rpx;
-  border: 1px solid #E7E7E7
+  border: 1px solid #E7E7E7;
+  box-sizing: border-box
 }
 .input_text{
   width:120rpx;
@@ -60,13 +61,17 @@
 .input_border_2{
   width: 65%;
   height: 74rpx;
-  border: 1px solid #E7E7E7
+  border: 1px solid #E7E7E7;
+  box-sizing: border-box
+
 }
 
 .va{
   width: 35%;
   height: 74rpx;
-  border: 1px solid #FA1301
+  border: 1px solid #FA1301;
+  box-sizing: border-box
+
 }
 
 .input_text_2{

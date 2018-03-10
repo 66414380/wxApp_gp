@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
 	"appid": "touristappid",
-	"projectname": "wxApp",
+	"projectname": "wxApp%E5%BC%80%E7%A5%A8",
 	"condition": {
 		"search": {
 			"current": -1,

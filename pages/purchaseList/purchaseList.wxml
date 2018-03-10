@@ -16,7 +16,7 @@
         <text class='titleFont2 color_9'>消费32笔，合计￥888元</text>
       </view>
     </view>
-    <view class="flex_1 title_r m_t">
+    <view class="flex_1 m_t">
       <view class="flex_ec">
         <text class='titleFont2 color_9 margin_r_10'>自定义查询</text>
         <image style="width: 50rpx; height: 50rpx; background-color: #eeeeee;" mode="widthFix" src="{{src}}"></image>

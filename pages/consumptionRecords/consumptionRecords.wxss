@@ -1,0 +1,4 @@
+.top{
+  height: 600rpx;
+  background-color: white
+}

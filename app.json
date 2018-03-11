@@ -1,5 +1,7 @@
 {
   "pages":[
+    
+    "pages/consumptionRecords/consumptionRecords",
     "pages/search/search",
    "pages/purchaseList/purchaseList",
     "pages/orderDetail/orderDetail"

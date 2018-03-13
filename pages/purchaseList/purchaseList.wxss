@@ -1,94 +1,118 @@
 @import "../../template/resourceList/resourceList.wxss";
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
 .top {
   height: 88rpx;
-  border-bottom: 1px solid #E7E7E7;
+  border-bottom: 1px solid #e7e7e7;
   box-sizing: border-box;
+  background-color: #f4f4f4;
 }
-.topFont{
-  font-size: 22rpx
+
+.topFont {
+  font-size: 22rpx;
 }
-.top_bar{
+
+.top_bar {
   width: 112rpx;
   height: 6rpx;
   margin-top: 12rpx;
-  background-color: #FA1301
+  background-color: #fa1301;
 }
-.top_bar_no{
+
+.top_bar_no {
   width: 112rpx;
   height: 18rpx;
 }
-.top_cell{
+
+.top_cell {
   margin-bottom: 14rpx;
 }
-.title{
+
+.title {
   padding: 0 40rpx;
-}
-.titleFont{
-  font-size: 28rpx
-}
-.titleFont2{
-  font-size: 22rpx
-}
-.m_t{
-  margin-top: 20rpx
+  background-color: #f4f4f4;
 }
 
-.window_title{
-  margin: 40rpx 0 45rpx 0
+.titleFont {
+  font-size: 28rpx;
 }
 
-.input_border{
+.titleFont2 {
+  font-size: 22rpx;
+}
+
+.m_t {
+  margin-top: 20rpx;
+}
+
+.window_title {
+  margin: 40rpx 0 45rpx 0;
+}
+
+.input_border {
   width: 80%;
   height: 74rpx;
-  border: 1px solid #E7E7E7;
-  box-sizing: border-box
+  border: 1px solid #e7e7e7;
+  box-sizing: border-box;
 }
-.input_text{
-  width:120rpx;
-  text-align: center
+
+.input_text {
+  width: 120rpx;
+  text-align: center;
 }
-.placeholder{
+
+.placeholder {
   font-size: 24rpx;
-  color: #999999;
-  font-weight: 100
+  color: #999;
+  font-weight: 100;
 }
-.m_t24{
-  margin-top: 24rpx
+
+.m_t24 {
+  margin-top: 24rpx;
 }
-.input_border2{
+
+.input_border2 {
   width: 80%;
 }
-.input_border_2{
+
+.input_border_2 {
   width: 65%;
   height: 74rpx;
-  border: 1px solid #E7E7E7;
-  box-sizing: border-box
-
+  border: 1px solid #e7e7e7;
+  box-sizing: border-box;
 }
 
-.va{
+.va {
   width: 35%;
   height: 74rpx;
-  border: 1px solid #FA1301;
-  box-sizing: border-box
-
+  border: 1px solid #fa1301;
+  box-sizing: border-box;
 }
 
-.input_text_2{
-  width:120rpx;
-  text-align: center
-}
-.va_input{
-  width:80%
+.input_text_2 {
+  width: 120rpx;
+  text-align: center;
 }
 
-.button{
-    width: 80%;
-    margin-top: 36rpx;
-    height: 74rpx;
-    background-color: #FA1301
+.va_input {
+  width: 80%;
 }
-.button_font{
+
+.button {
+  width: 80%;
+  margin-top: 36rpx;
+  height: 74rpx;
+  background-color: #fa1301;
+}
+
+.button_font {
   font-size: 28rpx;
-  color: white
+  color: white;
 }

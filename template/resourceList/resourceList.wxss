@@ -1,3 +1,6 @@
+.titleFont2{
+  font-size: 22rpx
+}
 .title_date{
   margin: 0 0 12rpx 40rpx
 }
@@ -32,4 +35,9 @@
 }
 .split_3{
   border-bottom: 1px solid #E7E7E7
+}
+
+.ressource_last{
+  margin-top: 50rpx;
+  height: 30rpx
 }

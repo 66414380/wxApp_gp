@@ -1,49 +1,52 @@
-.detailContainer{
+.detailContainer {
   height: 100%;
   margin: 0 20rpx;
   background-color: white;
 }
-.top{
+
+.top {
   margin-top: 40rpx;
-  border-bottom: 1px solid #E7E7E7;
+  border-bottom: 1px solid #e7e7e7;
 }
-.top_font{
+
+.top_font {
   margin-top: 24rpx;
   margin-bottom: 54rpx;
 }
 
-.h{
-   margin-top:40rpx;
-
+.h {
+  margin-top: 40rpx;
 }
 
 .arrow-up {
-    width:0; 
-    height:0; 
-    border-left:15rpx solid transparent;
-    border-right:15rpx solid transparent;
-    border-bottom:20rpx solid #7F7F7F;
+  width: 24rpx;
+  height: 24rpx;
+  transform: rotate(0deg);
 }
+
 .arrow-down {
-    width:0; 
-    height:0; 
-    border-left:15rpx solid transparent;
-    border-right:15rpx solid transparent;
-    border-top:20rpx solid #7F7F7F;
+  width: 24rpx;
+  height: 24rpx;
+  transform: rotate(180deg);
 }
-.item{
-  border-bottom: 1px solid #E7E7E7;
+
+.item {
+  border-bottom: 1px solid #e7e7e7;
 }
-.cell{
+
+.cell {
   padding-bottom: 50rpx;
-  border-bottom: 1px solid #E7E7E7;
+  border-bottom: 1px solid #e7e7e7;
 }
-.cell_footer{
-  height: 60rpx
+
+.cell_footer {
+  height: 60rpx;
 }
-.item_cell{
-  margin-top: 26rpx
+
+.item_cell {
+  margin-top: 26rpx;
 }
-.right{
-  text-align: right
+
+.right {
+  text-align: right;
 }

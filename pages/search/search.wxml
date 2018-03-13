@@ -2,44 +2,52 @@
   <view class='title'>
     <text class=' color_9'>查询时间不得超过30天</text>
   </view>
-  <view class='margin_lr_10'>
+  <view class='time_body'>
     <view class='time  flex_r'>
       <view class='flex_1 flex_a'>
         <text class='font_24 color_6'>开始时间</text>
       </view>
-        
-      <picker class='flex_1 flex ' mode="date" value="{{date}}"  bindchange="bindDateStartChange">
-        <text class='font_24 color_6'>{{dateStart}} ></text>
+
+      <picker class='flex_1 flex ' mode="date" value="{{date}}" bindchange="bindDateStartChange">
+        <view class='flex_a'>
+          <text class='font_24 color_6'>{{dateStart}}</text>
+          <image class='image' mode="widthFix" src="../../images/icon2.png"></image>
+        </view>
       </picker>
-    
-      <picker class='flex_1 flex_ce' mode="time" value="{{timeStart}}"  bindchange="bindTimeStartChange">
-        <text class='font_24 color_6'>{{timeStart}} ></text>
+      <picker class='flex_1 flex_ce' mode="time" value="{{timeStart}}" bindchange="bindTimeStartChange">
+        <view class='flex_a'>
+          <text class='font_24 color_6'>{{timeStart}}</text>
+          <image class='image' mode="widthFix" src="../../images/icon2.png"></image>
+        </view>
       </picker>
     </view>
     <view class='time  flex_r'>
       <view class='flex_1 flex_a'>
         <text class='font_24 color_6'>结束时间</text>
       </view>
-      <picker class='flex_1 flex ' mode="date" value="{{dateEnd}}"  bindchange="bindDateEndChange">
-        <text class='font_24 color_6'>{{dateEnd}} ></text>
+      <picker class='flex_1 flex ' mode="date" value="{{dateEnd}}" bindchange="bindDateEndChange">
+        <view class='flex_a'>
+          <text class='font_24 color_6'>{{dateEnd}}</text>
+          <image class='image' mode="widthFix" src="../../images/icon2.png"></image>
+        </view>
       </picker>
-       <picker class='flex_1 flex_ce' mode="time" value="{{timeEnd}}"  bindchange="bindTimeEndChange">
-        <text class='font_24 color_6'>{{timeEnd}} ></text>
+      <picker class='flex_1 flex_ce' mode="time" value="{{timeEnd}}" bindchange="bindTimeEndChange">
+        <view class='flex_a'>
+          <text class='font_24 color_6'>{{timeEnd}}</text>
+          <image class='image' mode="widthFix" src="../../images/icon2.png"></image>
+        </view>
       </picker>
     </view>
 
-    <view class='search flex'>
+    <view class='search flex' bindtap='search'>
       <text>查询</text>
     </view>
-
-
-
   </view>
 
-    <view class="flex_1" style='overflow:auto'>
+  <view class="flex_o" style='margin-top:88rpx'>
     <scroll-view scroll-y="true" class='height_100' bindscrolltolower="lower">
       <import src="../../template/resourceList/resourceList" />
-      <template is="resourceList" data="{{selected,list1}}" />
+      <template is="resourceList" data="{{selected,list,footTitle}}" />
     </scroll-view>
   </view>
 

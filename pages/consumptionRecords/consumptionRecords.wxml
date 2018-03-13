@@ -1,6 +1,0 @@
-<view class='container'>
-  <view class='top flex'>
-    <canvas class="cir" style="width:212px; height:212px;" canvas-id="canvasArc">
-    </canvas>
-  </view>
-</view>

@@ -1,15 +1,27 @@
 @import "../../template/resourceList/resourceList.wxss";
 
-.title{
+.title {
   padding: 47rpx 0 20rpx 20rpx;
-  font-size: 22rpx
+  font-size: 22rpx;
 }
-.time{
-  height: 80rpx;
-    border-bottom: 1px solid #E7E7E7;
 
+.time_body {
+  padding: 0 20rpx;
+  background-color: white;
 }
-.search{
-    height: 80rpx;
-    color: #FA1301
+
+.time {
+  height: 80rpx;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.search {
+  height: 80rpx;
+  color: #fa1301;
+}
+
+.image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 20rpx;
 }

@@ -1,16 +1,13 @@
 {
-  "pages":[
-    
-    "pages/consumptionRecords/consumptionRecords",
+  "pages": [
+    "pages/purchaseList/purchaseList",
     "pages/search/search",
-   "pages/purchaseList/purchaseList",
     "pages/orderDetail/orderDetail"
-    
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F4F4F4",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   }
 }

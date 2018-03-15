@@ -1,9 +1,9 @@
 /**app.wxss**/
-page{height: 100%;background-color: #F4F4F4;}
+page{height: 100%;background-color: #F4F4F4;padding: 0;margin: 0;}
 text{font-weight: 200}
 .container {
   /* height: 100%; */
-  padding: 0;margin: 0;
+  /* padding: 0;margin: 0; */
   /* background-color: #F4F4F4; */
 } 
 .width_100{width: 100%}
@@ -51,10 +51,10 @@ text{font-weight: 200}
   color: #333333
 }
 .font_18{
-  font-size: 18rpx
+  font-size: 22rpx
 }
 .font_24{
-  font-size: 24rpx
+  font-size: 28rpx
 }
 .font_36{
   font-size: 36rpx

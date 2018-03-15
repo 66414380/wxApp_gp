@@ -1,16 +1,16 @@
 <template name="resourceList">
   <block wx:for="{{list}}" wx:for-index="i" wx:key="i" wx:if="{{selected === 0}}">
     <view class="item_mt">
-      <text class='title_date titleFont2 color_9'>2018/2/28</text>
-      <!-- <navigator url='../orderDetail/orderDetail?id={{item.id}}'> -->
+      <text class='title_date titleFont2 color_9'>{{item.time}}</text>
+      <!-- <navigator url='../orderDetail/orderDetail?id={{item.order_id}}'> -->
         <view class="item flex_a ">
           <view class="flex">
-            <image style="width: 88rpx; height: 88rpx; background-color: #eeeeee;" mode="widthFix" src="{{src}}"></image>
+            <image style="width: 88rpx; height: 88rpx;" mode="widthFix" src="../../images/icon0.png"></image>
           </view>
           <view class="flex_sb width_100 margin_l_10">
             <view class='flex_f'>
-              <text class='font_24'>{{item.name}}</text>
-              <text class='font_18 color_9 split'>{{item.subName}}</text>
+              <text class='font_24'>{{item.brandName}}</text>
+              <text class='font_18 color_9 split'>{{item.storeName}}</text>
             </view>
             <view>
               <text class='font_48'>￥{{item.price}}</text>
@@ -20,24 +20,22 @@
       <!-- </navigator> -->
     </view>
   </block>
-  <view class='flex ressource_last font_18' wx:if="{{selected === 0}}">
-    <text>以上是全部吃饭记录</text>
-  </view>
+
 
   <block wx:for="{{list}}" wx:for-index="i" wx:key="i" wx:if="{{selected === 1}}">
     <view class="item_mt">
-      <text class='title_date titleFont2 color_9'>2018/2/28</text>
+      <text class='title_date titleFont2 color_9'>{{item.time}}</text>
       <!-- <navigator url='../orderDetail/orderDetail?id={{item.id}}'> -->
         <view class="item flex_a ">
           <view class="flex">
-            <image style="width: 88rpx; height: 88rpx; background-color: #eeeeee;" mode="widthFix" src="{{src}}"></image>
+            <image style="width: 88rpx; height: 88rpx;" mode="widthFix" src="../../images/icon0.png"></image>
           </view>
           <view class="flex_sb width_100 margin_l_10">
             <view class='flex_f'>
-              <text class='font_24'>{{item.name}}</text>
+              <text class='font_24'>{{item.storeName}}</text>
             </view>
             <view class='flex_a'>
-              <image style="width: 50rpx; height: 50rpx; background-color: #eeeeee;" mode="widthFix" src="{{src}}"></image>
+              <image style="width: 50rpx; height: 50rpx;" mode="widthFix" src="{{item.storeLogo}}"></image>
               <text class='font_48'>￥{{item.price}}</text>
             </view>
           </view>
@@ -45,9 +43,7 @@
       <!-- </navigator> -->
     </view>
   </block>
-  <view class='flex ressource_last font_18' wx:if="{{selected === 1}}">
-    <text>以上是全部外卖记录</text>
-  </view>
+ 
   <block wx:for="{{list}}" wx:for-index="i" wx:key="i" wx:if="{{selected === 2}}">
     <view class="item_mt">
       <text class='title_date titleFont2 color_9'>{{item.add_time}}</text>
@@ -82,7 +78,13 @@
       <!-- </navigator> -->
     </view>
   </block>
-  <view class='flex ressource_last font_18' wx:if="{{selected === 2}}">
-    <text wx:if='{{list.length > 0}}'>{{footTitle}}</text>
+  <view class='flex ressource_last font_18' wx:if="{{list.length !== 0}}">
+    <text>{{footTitle}}</text>
   </view>
+
+
+<view class='flex' style='margin-top:420rpx' wx:if='{{list.length === 0}}'>
+<text class='font_24'>{{noRes}}</text>
+</view>
+
 </template>

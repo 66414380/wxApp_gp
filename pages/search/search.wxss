@@ -1,8 +1,16 @@
 @import "../../template/resourceList/resourceList.wxss";
-
+.header{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
 .title {
   padding: 47rpx 0 20rpx 20rpx;
   font-size: 22rpx;
+    background-color: #f4f4f4;
+
 }
 
 .time_body {
@@ -24,4 +32,7 @@
   width: 16rpx;
   height: 16rpx;
   margin-left: 20rpx;
+}
+.box{
+  width:100%;height:342rpx
 }

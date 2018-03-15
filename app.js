@@ -17,7 +17,8 @@ Date.prototype.format = function (fmt) {
   return fmt;
 };
 
-const baseUrl = 'http://test0.kuan1.cn/wxapp/index.php';
+const baseUrl = 'https://x.kuan1.cn/wxapp/index.php';//生产环境
+// const baseUrl = 'http://test0.kuan1.cn/wxapp/index.php';//测试环境
 App({
   xhr: function (method, url, obj = null, token = '', cb) {
     wx.request({
@@ -29,7 +30,7 @@ App({
         'token': token
       },
       success: function (res) {
-        if (typeof (cb) == "function") {
+        if (typeof (cb) === "function") {
           cb(res)
         }
       },
@@ -38,7 +39,44 @@ App({
       }
     })
   },
-
+  onShow:function(){
+    //拒绝获取user信息后调用
+    wx.getSetting({
+      success: (res) => {
+        console.log(!res.authSetting['scope.userInfo'])
+        if (!res.authSetting['scope.userInfo']) {
+          wx.authorize({
+            scope: 'scope.userInfo',
+            success: () => { },
+            fail: () => {
+              wx.openSetting({
+                success: (res) => {
+                  wx.login({
+                    success: (res) => {
+                      this.xhr('POST', '?controller=consumer&action=codeGetUserIofo', { wx_appid: 'wx3d7c7e70e4850853', code: res.code }, '', (res) => {
+                        if (res.data.errcode === 1) {
+                          wx.getUserInfo({
+                            success: (res1) => {
+                              this.xhr('POST', '?controller=consumer&action=wxUserInfoGetOursInfo', { wx_appid: 'wx3d7c7e70e4850853', session_token: res.data.data.session_token, vi: res1.iv, encrypte_data: res1.encryptedData }, '', (res2) => {
+                                storage.set('userId', res2.data.data.user_id)
+                              })
+                            }
+                          })
+                        }
+                        if (res.data.errcode === 0) {
+                          storage.set('userId', res.data.data.user_id)
+                        }
+                      })
+                    }
+                  })
+                }
+              })
+            }
+          })
+        }
+      }
+    })
+  },
   onLaunch: function () {
     wx.getSystemInfo({
       success: function (res) {
@@ -51,48 +89,5 @@ App({
         console.log(res.platform)
       }
     })
-
-
-    let login = () => {
-      console.log(444)
-      wx.login({
-        success: (res) => {
-          this.xhr('POST', '?controller=consumer&action=codeGetUserIofo', { wx_appid: 'wx3d7c7e70e4850853', code: res.code }, '', (res) => {
-            if (res.data.errcode === 1) {
-              wx.getUserInfo({
-                success: (res1) => {
-                  this.xhr('POST', '?controller=consumer&action=wxUserInfoGetOursInfo', { wx_appid: 'wx3d7c7e70e4850853', session_token: res.data.data.session_token, vi: res1.iv, encrypte_data: res1.encryptedData }, '', (res2) => {
-                    storage.set('userId', res2.data.data.user_id)
-                  })
-                }
-              })
-            }
-            if (res.data.errcode === 0) {
-              storage.set('userId', res.data.data.user_id)
-            }
-          })
-        }
-      })
-    }
-
-    //login()
-
-    // wx.getSetting({
-    //   success(res) {
-    //     if (!res.authSetting['scope.userInfo']) {
-    //       wx.authorize({
-    //         scope: 'scope.userInfo',
-    //         success: () => { },
-    //         fail: () => {
-    //           wx.openSetting({
-    //             success: (res) => {
-    //               login()
-    //             }
-    //           })
-    //         }
-    //       })
-    //     }
-    //   }
-    // })
   },
 })

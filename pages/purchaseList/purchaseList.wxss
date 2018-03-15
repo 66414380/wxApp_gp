@@ -5,7 +5,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 99;
 }
 
 .top {
@@ -16,7 +16,7 @@
 }
 
 .topFont {
-  font-size: 22rpx;
+  font-size: 28rpx;
 }
 
 .top_bar {
@@ -45,7 +45,7 @@
 }
 
 .titleFont2 {
-  font-size: 22rpx;
+  font-size: 24rpx;
 }
 
 .m_t {
@@ -115,4 +115,7 @@
 .button_font {
   font-size: 28rpx;
   color: white;
+}
+.box{
+  width:100%;height:180rpx
 }

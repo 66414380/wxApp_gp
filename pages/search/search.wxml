@@ -1,4 +1,4 @@
-<view class="container flex_f">
+<view class='header'>
   <view class='title'>
     <text class=' color_9'>查询时间不得超过30天</text>
   </view>
@@ -43,12 +43,9 @@
       <text>查询</text>
     </view>
   </view>
-
-  <view class="flex_o" style='margin-top:88rpx'>
-    <scroll-view scroll-y="true" class='height_100' bindscrolltolower="lower">
-      <import src="../../template/resourceList/resourceList" />
-      <template is="resourceList" data="{{selected,list,footTitle}}" />
-    </scroll-view>
-  </view>
-
 </view>
+
+
+<view class='box'></view>
+<import src="../../template/resourceList/resourceList" />
+<template is="resourceList" data="{{selected,list,footTitle,noRes}}" />

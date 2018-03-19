@@ -1,0 +1,46 @@
+.body {
+  background-color: white;
+  height: 100%;
+}
+
+.title_h {
+  height: 80rpx;
+  margin: 0 20rpx;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.arrow-up {
+  width: 24rpx;
+  height: 24rpx;
+  transform: rotate(0deg);
+}
+
+.arrow-down {
+  width: 24rpx;
+  height: 24rpx;
+  transform: rotate(180deg);
+}
+
+.input_h {
+    height: 80rpx;
+  margin: 0 20rpx 0 40rpx;
+  border-bottom: 1px solid #e7e7e7;
+}
+.placeholder {
+   font-size: 28rpx; 
+  color: #999;
+  font-weight: 100;
+}
+
+.title2_h{
+  height: 80rpx;
+  margin: 40rpx 20rpx 0 20rpx;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.image {
+  width: 16rpx;
+  height: 16rpx;
+  margin-left: 20rpx;
+}

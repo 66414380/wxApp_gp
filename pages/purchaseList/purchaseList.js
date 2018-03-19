@@ -27,6 +27,11 @@ Page({
     validateAction: true,
     startTime: '',
     initTimeRemaining: 60 * 1000,
+    boss:'',
+    ali:''
+  },
+  aliHandle:function(){
+    console.log(1342)
   },
   toSearch: function () {
     wx.navigateTo({
@@ -97,7 +102,7 @@ Page({
   clickTop: function (e) {
     if (this.data.canClickTop === true){
 
-      this.setData({ selected: e.currentTarget.dataset.id, canScroll: true, p: { page: 1, pagesize: 20 }, count: '', count_price: '', list: [], footTitle: '', noRes: '', canClickTop:false })
+      this.setData({ selected: e.currentTarget.dataset.id, canScroll: true, p: { page: 1, pagesize: 20 }, count: '', count_price: '', list: [], footTitle: '', noRes: '', canClickTop:false ,boss:'',ali:''})
 
       if (e.currentTarget.dataset.id === 0) {
         this.firstRes(storage.get_s('userId'))
@@ -109,7 +114,7 @@ Page({
 
           if (cbRes.data.errcode === 0) {
             if (cbRes.data.data.list.length === 0) {
-              this.setData({ noRes: '暂没记录' })
+              this.setData({ noRes: '暂无记录' })
             } else {
               if (cbRes.data.data.pagecount === 1) {
                 this.setData({ canScroll: false, footTitle: '以上是全部外卖记录' })
@@ -141,7 +146,7 @@ Page({
           
           if (cbRes.data.errcode === 0) {
             if (cbRes.data.data.data.list.length === 0) {
-              this.setData({ noRes: '暂没记录' })
+              this.setData({ noRes: '暂无记录' })
             } else {
               if (cbRes.data.data.data.pagecount === 1) {
                 this.setData({ canScroll: false, footTitle: '以上是全部开票记录' })
@@ -245,12 +250,12 @@ Page({
     this.getX1Order(userId, this.data.p, (cbRes) => {
       if (cbRes.data.errcode === 0) {
         if (cbRes.data.data.list.length === 0) {
-          this.setData({ noRes: '暂没记录' })
+          this.setData({ noRes: '暂无记录' })
         } else {
           if (cbRes.data.data.pagecount === 1) {
             this.setData({ canScroll: false, footTitle: '以上是全部吃饭记录' })
           }
-          this.setData({ list: cbRes.data.data.list, count_price: cbRes.data.data.money, count: cbRes.data.data.count, totalPage: cbRes.data.data.pagecount })
+          this.setData({ list: cbRes.data.data.list, count_price: cbRes.data.data.money, count: cbRes.data.data.count, totalPage: cbRes.data.data.pagecount, boss: cbRes.data.data.boss, ali: cbRes.data.data.ali})
         }
       } else {
         wx.showToast({

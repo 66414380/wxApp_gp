@@ -1,0 +1,57 @@
+.body {
+  background-color: white;
+  height: 100%;
+}
+
+.title {
+  padding: 60rpx 0;
+}
+
+.border {
+  width: 70%;
+}
+
+.input_border {
+  margin-bottom: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border: 1px solid #e7e7e7;
+}
+
+.input_validate {
+  height: 70rpx;
+  line-height: 70rpx;
+  border: 1px solid #e7e7e7;
+  box-sizing: border-box
+}
+.va{
+  text-align:center;
+}
+
+.input_border input {
+  text-align: center;
+}
+
+.placeholder {
+  /* font-size: 24rpx; */
+  color: #999;
+  font-weight: 100;
+}
+
+.button_border {
+  width: 216rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  margin: 0;
+  color: #a761a5;
+  background-color: #a6d0e7;
+}
+
+.submit_border {
+  margin-top: 30rpx;
+}
+
+.submit_border button {
+  font-size: 32rpx;
+}

@@ -3,20 +3,20 @@
     <view class="item_mt">
       <text class='title_date titleFont2 color_9'>{{item.time}}</text>
       <!-- <navigator url='../orderDetail/orderDetail?id={{item.order_id}}'> -->
-        <view class="item flex_a ">
-          <view class="flex">
-            <image style="width: 88rpx; height: 88rpx;" mode="widthFix" src="../../images/icon0.png"></image>
+      <view class="item flex_a ">
+        <view class="flex">
+          <image style="width: 88rpx; height: 88rpx;" mode="widthFix" src="../../images/icon0.png"></image>
+        </view>
+        <view class="flex_sb width_100 margin_l_10">
+          <view class='flex_f'>
+            <text class='font_24'>{{item.brandName}}</text>
+            <text class='font_18 color_9 split'>{{item.storeName}}</text>
           </view>
-          <view class="flex_sb width_100 margin_l_10">
-            <view class='flex_f'>
-              <text class='font_24'>{{item.brandName}}</text>
-              <text class='font_18 color_9 split'>{{item.storeName}}</text>
-            </view>
-            <view>
-              <text class='font_48'>￥{{item.price}}</text>
-            </view>
+          <view>
+            <text class='font_48'>￥{{item.price}}</text>
           </view>
         </view>
+      </view>
       <!-- </navigator> -->
     </view>
   </block>
@@ -26,65 +26,72 @@
     <view class="item_mt">
       <text class='title_date titleFont2 color_9'>{{item.time}}</text>
       <!-- <navigator url='../orderDetail/orderDetail?id={{item.id}}'> -->
-        <view class="item flex_a ">
-          <view class="flex">
-            <image style="width: 88rpx; height: 88rpx;" mode="widthFix" src="../../images/icon0.png"></image>
+      <view class="item flex_a ">
+        <view class="flex">
+          <image style="width: 88rpx; height: 88rpx;" mode="widthFix" src="../../images/icon0.png"></image>
+        </view>
+        <view class="flex_sb width_100 margin_l_10">
+          <view class='flex_f'>
+            <text class='font_24'>{{item.storeName}}</text>
           </view>
-          <view class="flex_sb width_100 margin_l_10">
-            <view class='flex_f'>
-              <text class='font_24'>{{item.storeName}}</text>
-            </view>
-            <view class='flex_a'>
-              <image style="width: 50rpx; height: 50rpx;" mode="widthFix" src="{{item.storeLogo}}"></image>
-              <text class='font_48'>￥{{item.price}}</text>
-            </view>
+          <view class='flex_a'>
+            <image style="width: 50rpx; height: 50rpx;" mode="widthFix" src="{{item.storeLogo}}"></image>
+            <text class='font_48'>￥{{item.price}}</text>
           </view>
         </view>
+      </view>
       <!-- </navigator> -->
     </view>
   </block>
- 
+
   <block wx:for="{{list}}" wx:for-index="i" wx:key="i" wx:if="{{selected === 2}}">
     <view class="item_mt">
       <text class='title_date titleFont2 color_9'>{{item.add_time}}</text>
       <!-- <navigator url='../orderDetail/orderDetail?id={{item.id}}'> -->
-        <view class="item_3 flex_r ">
-          <view class="flex_3 flex_f flex_a height_100">
-            <view class='height_100 width_100 flex_a color_9 split_3'>
-              <view>
-                <text class='font_18 item_3_l'>付款方：</text>
-                <text class='font_24'>{{item.title}}</text>
-              </view>
-            </view>
-            <view class='height_100 width_100 flex_a color_9'>
-              <view>
-                <text class='font_18 item_3_l'>收款方：</text>
-                <text class='font_24'>{{item.name}}</text>
-              </view>
+      <view class="item_3 flex_r ">
+        <view class="flex_3 flex_f flex_a height_100">
+          <view class='height_100 width_100 flex_a color_9 split_3'>
+            <view>
+              <text class='font_18 item_3_l'>付款方：</text>
+              <text class='font_24'>{{item.title}}</text>
             </view>
           </view>
-
-
-          <view class="flex_1 flex_ce item_3_r">
-
-            <view class='flex_f flex'>
-              <text class='font_18 color_9'>发票金额</text>
-              <text class='font_48'>￥{{item.price}}</text>
+          <view class='height_100 width_100 flex_a color_9'>
+            <view>
+              <text class='font_18 item_3_l'>收款方：</text>
+              <text class='font_24'>{{item.name}}</text>
             </view>
+          </view>
+        </view>
 
+
+        <view class="flex_1 flex_ce item_3_r">
+
+          <view class='flex_f flex'>
+            <text class='font_18 color_9'>发票金额</text>
+            <text class='font_48'>￥{{item.price}}</text>
           </view>
 
         </view>
+
+      </view>
       <!-- </navigator> -->
     </view>
   </block>
-  <view class='flex ressource_last font_18' wx:if="{{list.length !== 0}}">
-    <text>{{footTitle}}</text>
+  <view class='flex_f flex_a ressource_last font_18' wx:if="{{list.length !== 0}}">
+    <view>
+      <text>{{footTitle}}</text>
+    </view>
+
+    <view class='boss_button' wx:if='{{boss === 1 && ali === 0}}' bindtap='aliHandle'>
+      <text class='font_24'>我要款易服务</text>
+
+    </view>
   </view>
 
 
-<view class='flex' style='margin-top:420rpx' wx:if='{{list.length === 0}}'>
-<text class='font_24'>{{noRes}}</text>
-</view>
+  <view class='flex' style='margin-top:420rpx' wx:if='{{list.length === 0}}'>
+    <text class='font_24'>{{noRes}}</text>
+  </view>
 
 </template>

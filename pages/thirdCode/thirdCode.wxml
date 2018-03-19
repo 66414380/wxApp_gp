@@ -1,0 +1,24 @@
+<view class='flex_f height_100'>
+
+  <view class='flex_1'>
+    <view class="flex_a input_h">
+      <view class='margin_r_10 flex_a'>
+        <text class='font_24 color_9'>名称</text>
+      </view>
+      <input placeholder='请输入第三方编码名称' value='{{code1}}' bindinput="code1Handle" placeholder-class='placeholder'></input>
+    </view>
+
+    <view class="flex_a input_h">
+      <view class='margin_r_10 flex_a'>
+        <text class='font_24 color_9'>编码</text>
+      </view>
+      <input placeholder='请输入第三方编码' value='{{code2}}' bindinput="code2Handle" placeholder-class='placeholder'></input>
+    </view>
+  </view>
+
+
+
+  <view class='margin_10'>
+    <button type='primary' bindtap='back'>提交</button>
+  </view>
+</view>

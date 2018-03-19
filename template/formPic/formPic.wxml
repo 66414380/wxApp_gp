@@ -1,0 +1,10 @@
+  <view class="flex_sb input_h" bindtap='thirdCode'>
+    <view class='margin_r_10 flex_a'>
+      <text class='font_24 color_9'>营业执照</text>
+    </view>
+    <view class='flex_a' >
+      <text class='font_24' wx:if="{{pic1 === ''}}">必填，请上传</text>
+      <icon type="success" size="20" color="green" wx:if="{{pic1 !== ''}}"/>
+    <image class=' image ' mode="widthFix" src="../../images/icon2.png"></image>
+    </view>
+  </view>

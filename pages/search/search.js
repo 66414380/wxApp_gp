@@ -55,7 +55,7 @@ Page({
       wx.showNavigationBarLoading()
       this.getX1Order(storage.get_s('userId'), this.data.p, create_time, end_time, (cbRes) => {
         if (cbRes.data.data.list.length === 0) {
-          this.setData({ noRes: '暂没记录' })
+          this.setData({ noRes: '暂无记录' })
         } else {
           if (cbRes.data.data.pagecount === 1) {
             this.setData({ canScroll: false, footTitle: '以上是全部吃饭记录' })
@@ -81,7 +81,7 @@ Page({
 
         if (cbRes.data.errcode === 0) {
           if (cbRes.data.data.list.length === 0) {
-            this.setData({ noRes: '暂没记录' })
+            this.setData({ noRes: '暂无记录' })
           } else {
             if (cbRes.data.data.pagecount === 1) {
               this.setData({ canScroll: false, footTitle: '以上是全部外卖记录' })
@@ -97,7 +97,7 @@ Page({
       wx.showNavigationBarLoading()
       this.getInvoiceList(storage.get_s('userId'), this.data.p, create_time, end_time, (cbRes) => {
         if (cbRes.data.data.data.list.length === 0) {
-          this.setData({ noRes: '暂没记录' })
+          this.setData({ noRes: '暂无记录' })
         } else {
           if (cbRes.data.data.data.pagecount === 1) {
             this.setData({ canScroll: false, footTitle: '以上是全部开票记录' })

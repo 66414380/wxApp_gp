@@ -41,3 +41,17 @@
   margin-top: 50rpx;
   height: 30rpx
 }
+
+.boss_button{
+  margin: 20rpx;
+  width: 70%;
+  height: 100rpx;
+  background-color: #008643;
+  text-align:center;
+  line-height:70rpx;
+
+}
+
+.boss_button text {
+  color: white
+}

@@ -1,0 +1,29 @@
+<view class='body flex_a flex_f'>
+  <text class='title  font_48'>体验开始</text>
+
+  <view class='border'>
+    <view class='input_border flex'>
+      <input placeholder='姓名' disabled='{{showBoss === true}}' bindinput="nameHandle" value='{{name}}' placeholder-class='placeholder' class='va font_24'></input>
+    </view>
+
+    <view class='input_border flex '>
+      <input placeholder='餐厅品牌' disabled='{{showBoss === true}}' bindinput="brandHandle" value='{{brand}}' placeholder-class='placeholder' class='va font_24'></input>
+    </view>
+
+    <view class='input_border flex '>
+      <input placeholder='手机号码' disabled='{{showBoss === true}}' type="number" value='{{phone}}' bindinput="phoneHandle" maxlength='11' placeholder-class='placeholder' class='va font_24'></input>
+    </view>
+
+    <view class='flex_a' wx:if='{{showBoss === false}}'>
+      <view class='input_validate flex flex_1 margin_r_10'>
+      <input placeholder='验证码' value='{{code}}' type="number" bindinput="codeHandle"  placeholder-class='placeholder' class='va font_24'></input>
+      </view>
+      <button  class='button_border' bindtap="validate">{{seconds}}</button>
+    </view>
+
+    <view class='submit_border'>
+      <button type='primary' bindtap="submit">确定</button>
+    </view>
+  </view>
+
+</view>

@@ -27,13 +27,13 @@
 </view>
 <view class='box'></view>
 <import src="../../template/resourceList/resourceList" />
-<template is="resourceList" data="{{selected,list,footTitle,noRes}}" />
+<template is="resourceList" data="{{selected,list,footTitle,noRes,boss,ali}}" />
 
 
 <view bindtap='close' style="display:{{display}};height: {{height}}px; width: {{width}}px;background-color: #C2C2C2;position: absolute;left: 0;top: 0;z-index: 100;background-color:rgba(0,0,0,.5)">
   <view catchtap='touchWindow' style="width:80%;height:418rpx;position:fixed;z-index:111;border-radius:10rpx;background-color:white;top: {{top}}px; left: {{left}}px;">
 
-    <text class="window_title font_24 flex">请输入手机号后查看您的外卖订单</text>
+    <text class="window_title font_24 flex">请输入手机号码查看您的外卖订单</text>
     <view class='width_100 flex flex_f'>
       <view class='input_border flex_a'>
         <text class='font_24 input_text'>手机号</text>

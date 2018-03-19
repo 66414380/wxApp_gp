@@ -1,0 +1,32 @@
+<view class='body flex_f height_100'>
+  <view class='top flex'>
+    <text class='font_36'>请保存下图至相册</text>
+  </view>
+
+  <!-- <view class='flex_1 content flex_f flex_a'>
+
+    <text class='flex_1 flex color_w'>扫码付款</text>
+
+    <view class='flex_1 flex_f flex'>
+      <view>
+        <image style="width: 50rpx; height: 50rpx" class='margin_r_10' mode="widthFix" src="../../images/aliPay.jpg"></image>
+        <image style="width: 50rpx; height: 50rpx" mode="widthFix" src="../../images/wx.jpg"></image>
+      </view>
+      <view>
+        <text class='color_w font_48'>￥1.00</text>
+      </view>
+    </view>
+    <view class='flex_2 flex_j width_100'>
+      <image style="width: 60%; height: 60%" mode="widthFix" src="{{img_url}}"></image>
+    </view>
+
+  </view> -->
+
+  <image class='flex_1' style="width: 100%" mode="aspectFit" src="{{img_url}}"></image>
+
+
+
+  <view class='foot flex_a'>
+    <button type='primary' class='width_100' bindtap="saveImgToPhotosAlbumTap">保存至相册</button>
+  </view>
+</view>

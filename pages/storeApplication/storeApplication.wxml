@@ -1,0 +1,69 @@
+<view class='body flex_f'>
+<view class='flex_1'>
+  <view bindtap="showHandle" data-id='0' class="flex_sb title_h">
+    <view>
+      <text class='font_18 color_9'>基本信息</text>
+    </view>
+    <image class="{{(display[0])?'arrow-up':'arrow-down'}}" mode="widthFix" src="../../images/icon3.png"></image>
+  </view>
+
+
+<view wx:if='{{display[0]}}'>
+  <view class="flex_a input_h">
+    <view class='margin_r_10 flex_a'>
+      <text class='font_24 color_9'>商户名称</text>
+    </view>
+    <input placeholder='必填，请输入开户名称' bindinput="nameHandle" placeholder-class='placeholder'></input>
+  </view>
+  <view class="flex_a input_h">
+    <view class='margin_r_10 flex_a'>
+      <text class='font_24 color_9'>联系电话</text>
+    </view>
+    <input placeholder='必填，请输入联系电话' bindinput="telHandle" placeholder-class='placeholder'></input>
+  </view>
+
+  <view class="flex_sb input_h" bindtap='thirdCode'>
+    <view class='margin_r_10 flex_a'>
+      <text class='font_24 color_9'>第三方编码</text>
+    </view>
+    <view class='flex_a' >
+      <text class='font_24' wx:if="{{thirdCode.code1 === '' && thirdCode.code2 === ''}}">填写</text>
+
+      <icon type="success" size="20" color="green" wx:if="{{thirdCode.code1 !== '' || thirdCode.code2 !== ''}}"/>
+    <image class=' image ' mode="widthFix" src="../../images/icon2.png"></image>
+    </view>
+  </view>
+</view>
+
+
+  <view bindtap="showHandle" data-id='1' class="flex_sb title2_h">
+    <view>
+      <text class='font_18 color_9'>证件资料</text>
+    </view>
+    <image class="{{(display[1])?'arrow-up':'arrow-down'}}" mode="widthFix" src="../../images/icon3.png"></image>
+  </view>
+<view wx:if='{{display[1]}}'>
+  <view class="flex_sb input_h" bindtap='thirdCode'>
+    <view class='margin_r_10 flex_a'>
+      <text class='font_24 color_9'>营业执照</text>
+    </view>
+    <view class='flex_a' >
+      <text class='font_24' wx:if="{{pic1 === ''}}">必填，请上传</text>
+      <icon type="success" size="20" color="green" wx:if="{{pic1 !== ''}}"/>
+    <image class=' image ' mode="widthFix" src="../../images/icon2.png"></image>
+    </view>
+  </view>
+
+</view>
+
+
+
+</view>
+
+
+
+
+  <view class='margin_10'>
+    <button type='primary' bindtap='submit'>提交</button>
+  </view>
+</view>

@@ -17,8 +17,8 @@ Date.prototype.format = function (fmt) {
   return fmt;
 };
 
-const baseUrl = 'https://x.kuan1.cn/wxapp/index.php';//生产环境
-// const baseUrl = 'http://test0.kuan1.cn/wxapp/index.php';//测试环境
+// const baseUrl = 'https://x.kuan1.cn/wxapp/index.php';//生产环境
+const baseUrl = 'http://test0.kuan1.cn/wxapp/index.php';//测试环境
 App({
   xhr: function (method, url, obj = null, token = '', cb) {
     wx.request({

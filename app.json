@@ -1,8 +1,12 @@
 {
   "pages": [
+    "pages/storeApplication/storeApplication",
     "pages/purchaseList/purchaseList",
+    "pages/scanCode/scanCode",
+    "pages/index/index",
     "pages/search/search",
-    "pages/orderDetail/orderDetail"
+    "pages/orderDetail/orderDetail",
+    "pages/thirdCode/thirdCode" 
   ],
   "window": {
     "backgroundTextStyle": "light",

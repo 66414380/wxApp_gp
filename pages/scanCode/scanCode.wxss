@@ -1,0 +1,29 @@
+.body{
+  margin: 0 auto;
+  width: 80%
+}
+
+.top{
+  height: 100rpx
+}
+
+.content{
+  background-color: blue;
+  border-radius: 20rpx;
+}
+.title{
+  margin: 50rpx 0
+}
+
+.color_w{
+  color: white
+}
+
+
+.foot{
+  height: 150rpx
+}
+.foot button{
+  border-radius: 0;
+  font-size:32rpx;
+}

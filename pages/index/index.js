@@ -114,40 +114,45 @@ Page({
     return validate.test(mobile);
   },
   validate: function () {
-    if (this.validateMobile(this.data.phone)) {
-      if (this.data.validateAction === true) {
-        this.setData({ validateAction: false, startTime: new Date() })
-        app.xhr('POST', '?controller=sms&action=bindBossSms', { userId: storage.get_s('userId'), phone: this.data.phone }, '', (res) => {
-          if (res.data.errcode === 0) {
-            wx.showToast({
-              title: res.data.errmsg,
-              icon: 'success',
-              duration: 1200,
-              mask: true,
-              success: () => {
-                this.setData({ timerId: setInterval(this.tick, 1000) })
-              }
-            })
+    if (this.data.showBoss === false) {
+      if (this.validateMobile(this.data.phone)) {
+        if (this.data.validateAction === true) {
+          this.setData({ validateAction: false, startTime: new Date() })
+          app.xhr('POST', '?controller=sms&action=bindBossSms', { userId: storage.get_s('userId'), phone: this.data.phone }, '', (res) => {
+            if (res.data.errcode === 0) {
+              wx.showToast({
+                title: res.data.errmsg,
+                icon: 'success',
+                duration: 1200,
+                mask: true,
+                success: () => {
+                  this.setData({ timerId: setInterval(this.tick, 1000) })
+                }
+              })
 
-          }
-        })
-      }
+            }
+          })
+        }
 
-    } else {
-      if (this.data.phone === '') {
-        wx.showToast({
-          title: '请输入手机号码',
-          icon: 'none',
-          duration: 2000
-        })
       } else {
-        wx.showToast({
-          title: '请输入正确的手机号码',
-          icon: 'none',
-          duration: 2000
-        })
+        if (this.data.phone === '') {
+          wx.showToast({
+            title: '请输入手机号码',
+            icon: 'none',
+            duration: 2000
+          })
+        } else {
+          wx.showToast({
+            title: '请输入正确的手机号码',
+            icon: 'none',
+            duration: 2000
+          })
+        }
       }
     }
+
+
+    
   },
   firstRes: function (userId) {
     wx.showNavigationBarLoading()
@@ -160,6 +165,7 @@ Page({
       } else if (res.data.errcode === 201){
         this.setData({ showBoss:false})
       }
+      wx.hideNavigationBarLoading()
     })
  
   },

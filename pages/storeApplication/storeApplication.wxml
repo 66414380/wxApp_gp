@@ -43,16 +43,14 @@
     <image class="{{(display[1])?'arrow-up':'arrow-down'}}" mode="widthFix" src="../../images/icon3.png"></image>
   </view>
 <view wx:if='{{display[1]}}'>
-  <view class="flex_sb input_h" bindtap='thirdCode'>
-    <view class='margin_r_10 flex_a'>
-      <text class='font_24 color_9'>营业执照</text>
-    </view>
-    <view class='flex_a' >
-      <text class='font_24' wx:if="{{pic1 === ''}}">必填，请上传</text>
-      <icon type="success" size="20" color="green" wx:if="{{pic1 !== ''}}"/>
-    <image class=' image ' mode="widthFix" src="../../images/icon2.png"></image>
-    </view>
-  </view>
+
+<import src="../../template/formPic/formPic" />
+<template is="formPic" data="{{name:'营业执照',image:pic1,i:1}}" />
+<template is="formPic" data="{{name:'营业执照1',image:pic2,i:2}}" />
+<template is="formPic" data="{{name:'营业执照2',image:pic3,i:3}}" />
+<template is="formPic" data="{{name:'营业执照3',image:pic4,i:4}}" />
+<template is="formPic" data="{{name:'营业执照4',image:pic5,i:5}}" />
+<template is="formPic" data="{{name:'营业执照5',image:pic6,i:6}}" />
 
 </view>
 

@@ -28,10 +28,6 @@
   text-align:center;
 }
 
-.input_border input {
-  text-align: center;
-}
-
 .placeholder {
   /* font-size: 24rpx; */
   color: #999;
@@ -44,8 +40,8 @@
   line-height: 70rpx;
   font-size: 32rpx;
   margin: 0;
-  color: #a761a5;
-  background-color: #a6d0e7;
+  color: #179AD4;
+  
 }
 
 .submit_border {

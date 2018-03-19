@@ -2,23 +2,24 @@
   <text class='title  font_48'>体验开始</text>
 
   <view class='border'>
+
+    <text class='font_24'>*联系人</text>
     <view class='input_border flex'>
       <input placeholder='姓名' disabled='{{showBoss === true}}' bindinput="nameHandle" value='{{name}}' placeholder-class='placeholder' class='va font_24'></input>
     </view>
-
+    <text class='font_24'>*餐厅名称</text>
     <view class='input_border flex '>
       <input placeholder='餐厅品牌' disabled='{{showBoss === true}}' bindinput="brandHandle" value='{{brand}}' placeholder-class='placeholder' class='va font_24'></input>
     </view>
-
-    <view class='input_border flex '>
-      <input placeholder='手机号码' disabled='{{showBoss === true}}' type="number" value='{{phone}}' bindinput="phoneHandle" maxlength='11' placeholder-class='placeholder' class='va font_24'></input>
+    <text class='font_24'>*联系电话</text>
+    <view class='input_border flex_sb '>
+      <input placeholder='手机号码' disabled='{{showBoss === true}}' type="number" value='{{phone}}' bindinput="phoneHandle" maxlength='11' placeholder-class='placeholder' class='font_24'></input>
+      <text class='button_border flex' bindtap="validate">{{seconds}}</text>
     </view>
 
-    <view class='flex_a' wx:if='{{showBoss === false}}'>
-      <view class='input_validate flex flex_1 margin_r_10'>
-      <input placeholder='验证码' value='{{code}}' type="number" bindinput="codeHandle"  placeholder-class='placeholder' class='va font_24'></input>
-      </view>
-      <button  class='button_border' bindtap="validate">{{seconds}}</button>
+    <text class='font_24' wx:if='{{showBoss === false}}'>*验证码</text>
+    <view class='input_border flex ' wx:if='{{showBoss === false}}'>
+      <input placeholder='验证码' value='{{code}}' type="number" bindinput="codeHandle" placeholder-class='placeholder' class='va font_24'></input>
     </view>
 
     <view class='submit_border'>

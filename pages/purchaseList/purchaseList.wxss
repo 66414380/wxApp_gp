@@ -6,13 +6,13 @@
   top: 0;
   width: 100%;
   z-index: 99;
+  background-color: #f4f4f4;
 }
 
 .top {
   height: 88rpx;
   border-bottom: 1px solid #e7e7e7;
   box-sizing: border-box;
-  background-color: #f4f4f4;
 }
 
 .topFont {
@@ -32,12 +32,11 @@
 }
 
 .top_cell {
-  margin-bottom: 14rpx;
+  margin-top: 14rpx;
 }
 
 .title {
   padding: 0 40rpx;
-  background-color: #f4f4f4;
 }
 
 .titleFont {
@@ -48,6 +47,16 @@
   font-size: 24rpx;
 }
 
+.ali{
+  width:100%;
+  /* border: 1px solid #fa1301; */
+  background-color: #fa1301;
+  padding: 6rpx;
+  margin-top: 10rpx;
+  /* border-radius: 8rpx; */
+  text-align: center;
+  color: white
+}
 .m_t {
   margin-top: 20rpx;
 }
@@ -117,5 +126,11 @@
   color: white;
 }
 .box{
-  width:100%;height:180rpx
+  width:100%;height:180rpx;
+  background-color: #f4f4f4;
+}
+
+.box_ali{
+  width:100%;height:210rpx;
+  background-color: #f4f4f4;
 }

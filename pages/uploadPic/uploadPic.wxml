@@ -1,0 +1,77 @@
+<view class='flex_f height_100 body'>
+  <view class='flex_1'>
+    <view class='title flex'>
+      <text class='color font_18 margin_10'  wx:if="{{id === '1'}}">请上传在有效期内的合格营业执照，需原件图片</text>
+      <text class='color font_18 margin_10'  wx:if="{{id === '2'}}">请上传在有效期内的合格组织机构代码，需原件图片</text>
+      <text class='color font_18 margin_10'  wx:if="{{id === '3'}}">请上传开户许可证，需原件图片</text>
+      <text class='color font_18 margin_10'  wx:if="{{id === '4'}}">请上传税务登记证，需原件图片</text>
+      <text class='color font_18 margin_10'  wx:if="{{id === '5'}}">请上传法人证件正面照，需原件图片</text>
+      <text class='color font_18 margin_10'  wx:if="{{id === '6'}}">请上传法人证件背面照，需原件图片</text>
+    </view>
+
+
+    <view class='padding_10 flex_esa'>
+      <view class='uploadPic flex' bindtap='uploadPic'>
+         <text wx:if="{{pic === ''}}">+</text> 
+        <image  wx:if="{{pic !== ''}}" class='img'  mode="aspectFit" src="{{pic}}"></image>
+      </view>
+
+      <view class='uploadPic_r flex'>
+        <text class='font_18'>需要上传一张图片</text>
+      </view>
+    </view>
+
+    <view class=" input_h" wx:if="{{id === '1' || id === '2'}}">
+      <view class='input_h_d flex_sb'>
+            <view class='margin_r_10 flex_a'>
+          <text class='font_24'>长期有效</text>
+        </view>
+        <view class='margin_r_10'>
+          <switch bindchange="switchChange" />
+        </view>
+      </view>
+    </view>
+
+<view wx:if="{{id === '1'}}">
+    <view class="flex_a input_h2">
+      <view class='margin_r_10 flex_a input_w'>
+        <text class='font_24'>注册号</text>
+      </view>
+      <input placeholder='请与营业执照上保持一致' type="number" bindinput="registrationNumberHandle" value='{{registrationNumber}}' placeholder-class='placeholder'></input>
+    </view>
+    <view class='title flex'>
+      <text class='color font_18 margin_10'>请按照营业执照上的信息填写，仅支持数字、字母、汉字，如410884543048474（1-1）请输入：410884543048474</text>
+    </view>
+
+    <view class="flex_a input_h2">
+      <view class='margin_r_10 flex_a input_w'>
+        <text class='font_24'>字号名称</text>
+      </view>
+      <input placeholder='请填写营业执照上的字号名称' type="number" bindinput="nameNameHandle" value='{{nameName}}'  placeholder-class='placeholder'></input>
+    </view>
+    <view class='title flex'>
+      <text class='color font_18 margin_10'>企业执照请填写法人代表，个体户请填写经营者姓名</text>
+    </view>
+</view>
+
+<view wx:if="{{id === '2'}}">
+    <view class="flex_a input_h2">
+      <view class='margin_r_10 flex_a input_w'>
+        <text class='font_24'>机构代码</text>
+      </view>
+      <input placeholder='请与组织机构代码证上保持一致' type="number" bindinput="mechanismCodeHandle" value='{{mechanismCode}}'   placeholder-class='placeholder'></input>
+    </view>
+        <view class="flex_a input_h2">
+      <view class='margin_r_10 flex_a input_w'>
+        <text class='font_24'>机构名称</text>
+      </view>
+      <input placeholder='请填写组织机构代码证名称' type="number" bindinput="mechanismNameHandle" value='{{mechanismName}}'  placeholder-class='placeholder'></input>
+    </view>
+
+</view>
+
+  </view>
+  <view class='margin_10'>
+    <button type='primary' bindtap='back'>提交</button>
+  </view>
+</view>

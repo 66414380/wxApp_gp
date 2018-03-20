@@ -2,7 +2,7 @@
 <view class='flex_1'>
   <view bindtap="showHandle" data-id='0' class="flex_sb title_h">
     <view>
-      <text class='font_18 color_9'>基本信息</text>
+      <text class='font_18 '>基本信息</text>
     </view>
     <image class="{{(display[0])?'arrow-up':'arrow-down'}}" mode="widthFix" src="../../images/icon3.png"></image>
   </view>
@@ -11,23 +11,23 @@
 <view wx:if='{{display[0]}}'>
   <view class="flex_a input_h">
     <view class='margin_r_10 flex_a'>
-      <text class='font_24 color_9'>商户名称</text>
+      <text class='font_24 '>商户名称</text>
     </view>
     <input placeholder='必填，请输入开户名称' bindinput="nameHandle" placeholder-class='placeholder'></input>
   </view>
   <view class="flex_a input_h">
     <view class='margin_r_10 flex_a'>
-      <text class='font_24 color_9'>联系电话</text>
+      <text class='font_24 '>联系电话</text>
     </view>
     <input placeholder='必填，请输入联系电话' bindinput="telHandle" placeholder-class='placeholder'></input>
   </view>
 
   <view class="flex_sb input_h" bindtap='thirdCode'>
     <view class='margin_r_10 flex_a'>
-      <text class='font_24 color_9'>第三方编码</text>
+      <text class='font_24 '>第三方编码</text>
     </view>
     <view class='flex_a' >
-      <text class='font_24' wx:if="{{thirdCode.code1 === '' && thirdCode.code2 === ''}}">填写</text>
+      <text class='font_24 color_9' wx:if="{{thirdCode.code1 === '' && thirdCode.code2 === ''}}">填写</text>
 
       <icon type="success" size="20" color="green" wx:if="{{thirdCode.code1 !== '' || thirdCode.code2 !== ''}}"/>
     <image class=' image ' mode="widthFix" src="../../images/icon2.png"></image>
@@ -38,7 +38,7 @@
 
   <view bindtap="showHandle" data-id='1' class="flex_sb title2_h">
     <view>
-      <text class='font_18 color_9'>证件资料</text>
+      <text class='font_18 '>证件资料</text>
     </view>
     <image class="{{(display[1])?'arrow-up':'arrow-down'}}" mode="widthFix" src="../../images/icon3.png"></image>
   </view>
@@ -46,11 +46,11 @@
 
 <import src="../../template/formPic/formPic" />
 <template is="formPic" data="{{name:'营业执照',image:pic1,i:1}}" />
-<template is="formPic" data="{{name:'营业执照1',image:pic2,i:2}}" />
-<template is="formPic" data="{{name:'营业执照2',image:pic3,i:3}}" />
-<template is="formPic" data="{{name:'营业执照3',image:pic4,i:4}}" />
-<template is="formPic" data="{{name:'营业执照4',image:pic5,i:5}}" />
-<template is="formPic" data="{{name:'营业执照5',image:pic6,i:6}}" />
+<template is="formPic" data="{{name:'组织机构代码',image:pic2,i:2}}" />
+<template is="formPic" data="{{name:'开户许可证',image:pic3,i:3}}" />
+<template is="formPic" data="{{name:'税务登记证',image:pic4,i:4}}" />
+<template is="formPic" data="{{name:'法人证件正面照',image:pic5,i:5}}" />
+<template is="formPic" data="{{name:'法人证件反面照',image:pic6,i:6}}" />
 
 </view>
 

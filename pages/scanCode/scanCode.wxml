@@ -27,6 +27,6 @@
 
 
   <view class='foot flex_a'>
-    <button type='primary' class='width_100' bindtap="saveImgToPhotosAlbumTap">保存至相册</button>
+    <button type='primary' class='width_100' bindtap="saveImgToPhotosAlbumTap">保存到相册</button>
   </view>
 </view>

@@ -18,6 +18,10 @@ Page({
   },
   uploadPic:function(e){
     console.log(e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: `../uploadPic/uploadPic?id=${e.currentTarget.dataset.id}`,
+    })
+
   },
   submit:function(){
     console.log(this.data)

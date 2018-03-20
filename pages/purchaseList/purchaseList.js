@@ -1,12 +1,16 @@
 let app = getApp()
 let storage = require('../../utils/util.js')
+let animation = wx.createAnimation({
+  duration: 250,
+  timingFunction: 'ease-in-out',
+})
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    canClickTop:true,
+    canClickTop: true,
     selected: 0,
     display: 'none',
     width: '',
@@ -27,10 +31,21 @@ Page({
     validateAction: true,
     startTime: '',
     initTimeRemaining: 60 * 1000,
-    boss:'',
-    ali:''
+    boss: '',
+    ali: '',
+    animationData: {},
+    tabFlexWidth: '',
+    tabWidth:''
   },
-  aliHandle:function(){
+  toAli: function () {
+    wx.navigateTo({
+      url: '../ali/ali',
+      success: () => {
+
+      }
+    })
+  },
+  bossHandle: function () {
     console.log(1342)
   },
   toSearch: function () {
@@ -99,16 +114,22 @@ Page({
       }
     }
   },
+  tabAnimation: function (width) {
+    animation.translateX(this.data.tabWidth / 2 + width).step()
+    this.setData({ animationData: animation.export() })
+  },
   clickTop: function (e) {
-    if (this.data.canClickTop === true){
+    if (this.data.canClickTop === true) {
 
-      this.setData({ selected: e.currentTarget.dataset.id, canScroll: true, p: { page: 1, pagesize: 20 }, count: '', count_price: '', list: [], footTitle: '', noRes: '', canClickTop:false ,boss:'',ali:''})
+      this.setData({ selected: e.currentTarget.dataset.id, canScroll: true, p: { page: 1, pagesize: 20 }, count: '', count_price: '', list: [], footTitle: '', noRes: '', canClickTop: false, boss: '', ali: '' })
 
       if (e.currentTarget.dataset.id === 0) {
+        this.tabAnimation(0)
         this.firstRes(storage.get_s('userId'))
       }
 
       if (e.currentTarget.dataset.id === 1) {
+        this.tabAnimation(this.data.tabFlexWidth)
         wx.showNavigationBarLoading()
         this.getX2Order(storage.get_s('userId'), this.data.p, (cbRes) => {
 
@@ -129,21 +150,23 @@ Page({
               icon: 'none',
               duration: 2000
             })
-            
+
           }
 
           if (cbRes.data.errcode === 212) {
             storage.remove('userId')
           }
           wx.hideNavigationBarLoading()
-          this.setData({ canClickTop:true})
+          this.setData({ canClickTop: true })
         })
       }
 
       if (e.currentTarget.dataset.id === 2) {
+        this.tabAnimation(this.data.tabFlexWidth * 2)
+
         wx.showNavigationBarLoading()
         this.getInvoiceList(storage.get_s('userId'), this.data.p, (cbRes) => {
-          
+
           if (cbRes.data.errcode === 0) {
             if (cbRes.data.data.data.list.length === 0) {
               this.setData({ noRes: '暂无记录' })
@@ -159,7 +182,7 @@ Page({
               icon: 'none',
               duration: 2000
             })
-            
+
           }
 
           if (cbRes.data.errcode === 212) {
@@ -174,10 +197,10 @@ Page({
 
 
 
-}
+    }
 
 
-    
+
 
   },
   close: function () {
@@ -220,7 +243,7 @@ Page({
           this.setData({ list: cbRes.data.data.list, count_price: cbRes.data.data.money, count: cbRes.data.data.count, totalPage: cbRes.data.data.pagecount })
         })
 
-      }else{
+      } else {
         wx.showToast({
           title: res.data.errmsg,
           icon: 'none',
@@ -255,7 +278,7 @@ Page({
           if (cbRes.data.data.pagecount === 1) {
             this.setData({ canScroll: false, footTitle: '以上是全部吃饭记录' })
           }
-          this.setData({ list: cbRes.data.data.list, count_price: cbRes.data.data.money, count: cbRes.data.data.count, totalPage: cbRes.data.data.pagecount, boss: cbRes.data.data.boss, ali: cbRes.data.data.ali})
+          this.setData({ list: cbRes.data.data.list, count_price: cbRes.data.data.money, count: cbRes.data.data.count, totalPage: cbRes.data.data.pagecount, boss: cbRes.data.data.boss, ali: cbRes.data.data.ali })
         }
       } else {
         wx.showToast({
@@ -263,7 +286,7 @@ Page({
           icon: 'none',
           duration: 2000
         })
-        
+
       }
 
       if (cbRes.data.errcode === 212) {
@@ -319,15 +342,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var res = wx.getSystemInfoSync()
-    this.setData({ width: res.windowWidth, height: res.windowHeight, left: res.windowWidth / 2 - res.windowWidth * 0.8 / 2, top: res.windowHeight / 2 - 105 })
+    let res = wx.getSystemInfoSync()
+    let tabFlexWidth = res.windowWidth / 3    
+    let tabWidth = (tabFlexWidth / 2).toFixed(2)
+    this.setData({ tabWidth })//要比animationData先写入data才能生效
+    animation.translateX(tabWidth / 2).step()
+
+    this.setData({ tabFlexWidth, animationData: animation.export(), width: res.windowWidth, height: res.windowHeight, left: res.windowWidth / 2 - res.windowWidth * 0.8 / 2, top: res.windowHeight / 2 - 105 })
     if (storage.get_s('userId')) {
       this.firstRes(storage.get_s('userId'))
     } else {
       this.login()
 
     }
-
   },
 
   /**

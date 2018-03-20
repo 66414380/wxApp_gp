@@ -1,14 +1,32 @@
 <view class='header'>
-  <view class='flex_ec top'>
+<view class='top'>
+  <view class='flex_ec '>
     <block wx:for="{{topList}}" wx:for-index="i" wx:key="i">
+      <view class='flex_1 flex flex_f top_cell' bindtap='clickTop' data-id="{{i}}">
+        <text class='topFont' style="color:{{(selected == i)? '#FA1301' : ''}}">{{item.name}}</text>
+      </view>
+    </block>
+
+
+
+
+    <!-- <block wx:for="{{topList}}" wx:for-index="i" wx:key="i">
       <view class='flex_1 flex flex_f top_cell' bindtap='clickTop' data-id="{{i}}">
         <text class='topFont' style="color:{{(selected == i)? '#FA1301' : ''}}">{{item.name}}</text>
         <view class='top_bar' wx:if='{{selected === i}}'></view>
         <view class='top_bar_no' wx:if='{{selected !== i}}'></view>
       </view>
-    </block>
-  </view>
+    </block> -->
 
+  </view>
+  <view animation='{{animationData}}' style='width: {{tabWidth}}px;height: 6rpx;margin-top: 12rpx;background-color: #fa1301'></view>
+</view>
+
+          
+
+  <view class='flex' wx:if='{{ali === 0}}'>
+    <text class='titleFont2 ali' bindtap='toAli'>绑定支付宝能查看更多哦~ 点我立即绑定</text>
+  </view>
   <view class="flex_r title">
     <view class="flex_2">
       <view class="flex_f m_t">
@@ -25,7 +43,8 @@
     </view>
   </view>
 </view>
-<view class='box'></view>
+<view class='box' wx:if="{{ali === 1 || ali === ''}}"></view>
+<view class='box_ali' wx:if='{{ali === 0}}'></view>
 <import src="../../template/resourceList/resourceList" />
 <template is="resourceList" data="{{selected,list,footTitle,noRes,boss,ali}}" />
 
@@ -43,7 +62,7 @@
       <view class='m_t24 input_border2 flex_a'>
         <view class='input_border_2 flex_a'>
           <text class='font_24 input_text'>验证码</text>
-          <input placeholder='请输入验证码'  type="number" bindinput="codeHandle"  placeholder-class='placeholder' class='va_input font_24'></input>
+          <input placeholder='请输入验证码' type="number" bindinput="codeHandle" placeholder-class='placeholder' class='va_input font_24'></input>
         </view>
         <view class='margin_l_10 va flex' catchtap='validate'>
           <text class='font_24 color'>{{seconds}}</text>

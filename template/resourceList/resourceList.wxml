@@ -83,7 +83,7 @@
       <text>{{footTitle}}</text>
     </view>
 
-    <view class='boss_button' wx:if='{{boss === 1 && ali === 0}}' bindtap='aliHandle'>
+    <view class='boss_button' wx:if='{{boss === 1}}' bindtap='bossHandle'>
       <text class='font_24'>我要款易服务</text>
 
     </view>

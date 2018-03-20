@@ -22,6 +22,7 @@ text{font-weight: 200}
 .flex_sb{display: flex;align-items: center;justify-content: space-between;}
 .flex_ec{display: flex;align-items: flex-end;justify-content: center;}
 .flex_es{display: flex;align-items: flex-end;justify-content: space-between;}
+.flex_esa{display: flex;align-items: flex-end;justify-content: space-around;}
 .flex_o {flex: 1;overflow: auto;-webkit-overflow-scrolling: touch}
 .flex_1{flex: 1;}
 .flex_2{flex: 2;}

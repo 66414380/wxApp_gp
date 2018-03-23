@@ -21,9 +21,9 @@
 
 
 .foot{
-  height: 150rpx
+  height: 200rpx
 }
 .foot button{
-  border-radius: 0;
+ 
   font-size:32rpx;
 }

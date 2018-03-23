@@ -4,26 +4,26 @@
   <view class='border'>
 
     <text class='font_24'>*联系人</text>
-    <view class='input_border flex'>
-      <input placeholder='姓名' disabled='{{showBoss === true}}' bindinput="nameHandle" value='{{name}}' placeholder-class='placeholder' class='va font_24'></input>
+    <view class='input_border flex_a'>
+      <input placeholder='请输入姓名' disabled='{{showBoss === true}}' bindinput="nameHandle" value='{{name}}' placeholder-class='placeholder' class='font_24'></input>
     </view>
-    <text class='font_24'>*餐厅名称</text>
-    <view class='input_border flex '>
-      <input placeholder='餐厅品牌' disabled='{{showBoss === true}}' bindinput="brandHandle" value='{{brand}}' placeholder-class='placeholder' class='va font_24'></input>
+    <text class='font_24'>*餐厅品牌</text>
+    <view class='input_border flex_a'>
+      <input placeholder='请输入餐厅品牌' disabled='{{showBoss === true}}' bindinput="brandHandle" value='{{brand}}' placeholder-class='placeholder' class='font_24'></input>
     </view>
     <text class='font_24'>*联系电话</text>
     <view class='input_border flex_sb '>
-      <input placeholder='手机号码' disabled='{{showBoss === true}}' type="number" value='{{phone}}' bindinput="phoneHandle" maxlength='11' placeholder-class='placeholder' class='font_24'></input>
-      <text class='button_border flex' bindtap="validate">{{seconds}}</text>
+      <input placeholder='请输入手机号码' disabled='{{showBoss === true}}' type="number" value='{{phone}}' bindinput="phoneHandle" maxlength='11' placeholder-class='placeholder' class='font_24'></input>
+      <text class='button_border flex' bindtap="validate"  wx:if='{{showBoss === false}}'>{{seconds}}</text>
     </view>
 
     <text class='font_24' wx:if='{{showBoss === false}}'>*验证码</text>
-    <view class='input_border flex ' wx:if='{{showBoss === false}}'>
-      <input placeholder='验证码' value='{{code}}' type="number" bindinput="codeHandle" placeholder-class='placeholder' class='va font_24'></input>
+    <view class='input_border flex_a ' wx:if='{{showBoss === false}}'>
+      <input placeholder='请输入验证码' value='{{code}}' type="number" bindinput="codeHandle" placeholder-class='placeholder' class='font_24'></input>
     </view>
 
     <view class='submit_border'>
-      <button type='primary' bindtap="submit">确定</button>
+      <button type='primary' bindtap="submit">确认</button>
     </view>
   </view>
 

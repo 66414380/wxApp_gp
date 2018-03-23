@@ -24,9 +24,9 @@
   border: 1px solid #e7e7e7;
   box-sizing: border-box
 }
-.va{
+/* .va{
   text-align:center;
-}
+} */
 
 .placeholder {
   /* font-size: 24rpx; */

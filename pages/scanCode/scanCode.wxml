@@ -21,12 +21,14 @@
     </view>
 
   </view> -->
+<view class='flex_1'>
+  <image style="width: 100%" mode="widthFix" src="{{img_url}}"></image>
+</view>
 
-  <image class='flex_1' style="width: 100%" mode="aspectFit" src="{{img_url}}"></image>
 
 
-
-  <view class='foot flex_a'>
+  <view class='foot flex_f'>
     <button type='primary' class='width_100' bindtap="saveImgToPhotosAlbumTap">保存到相册</button>
+    <button class='margin_t_10 width_100' bindtap="toPurchaseList">进入吃货账单</button>
   </view>
 </view>

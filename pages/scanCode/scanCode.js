@@ -8,7 +8,11 @@ Page({
   data: {
     img_url: ''
   },
-
+  toPurchaseList:function(){
+    wx.navigateTo({
+      url: '../purchaseList/purchaseList',
+    })
+  },
   saveImgToPhotosAlbumTap: function () {
     wx.downloadFile({
       url: this.data.img_url,

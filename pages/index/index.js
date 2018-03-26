@@ -157,7 +157,6 @@ Page({
   firstRes: function (userId) {
     wx.showNavigationBarLoading()
     app.xhr('POST', '?controller=boss&action=getBossData', { userId },'',(res)=>{
-      console.log(res)
       if (res.data.errcode === 0){
         this.setData({ showBoss: true, name: res.data.data.real_name, brand: res.data.data.brand, phone: res.data.data.phone})
 

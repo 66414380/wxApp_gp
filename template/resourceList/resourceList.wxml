@@ -28,14 +28,15 @@
       <!-- <navigator url='../orderDetail/orderDetail?id={{item.id}}'> -->
       <view class="item flex_a ">
         <view class="flex">
-          <image style="width: 88rpx; height: 88rpx;" mode="widthFix" src="../../images/icon0.png"></image>
+          <image class='wm_img' mode="widthFix" wx:if="{{item.storeLogo === ''}}" src="../../images/icon0.png"></image>
+          <image class='wm_img' mode="widthFix" wx:if="{{item.storeLogo !== ''}}" src="{{item.storeLogo}}"></image>
         </view>
         <view class="flex_sb width_100 margin_l_10">
           <view class='flex_f'>
             <text class='font_24'>{{item.storeName}}</text>
           </view>
           <view class='flex_a'>
-            <image style="width: 50rpx; height: 50rpx;" mode="widthFix" src="{{item.storeLogo}}"></image>
+            <!-- <image style="width: 50rpx; height: 50rpx;" mode="widthFix" src="{{item.storeLogo}}"></image> -->
             <text class='font_48'>￥{{item.price}}</text>
           </view>
         </view>

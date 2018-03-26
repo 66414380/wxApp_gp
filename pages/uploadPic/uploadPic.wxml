@@ -27,7 +27,7 @@
           <text class='font_24'>长期有效</text>
         </view>
         <view class='margin_r_10'>
-          <switch bindchange="switchChange" />
+          <switch checked='{{switch1}}' bindchange="switchChange" />
         </view>
       </view>
     </view>
@@ -37,7 +37,7 @@
       <view class='margin_r_10 flex_a input_w'>
         <text class='font_24'>注册号</text>
       </view>
-      <input placeholder='请与营业执照上保持一致' type="number" bindinput="registrationNumberHandle" value='{{registrationNumber}}' placeholder-class='placeholder'></input>
+      <input placeholder='请与营业执照上保持一致' class='width_100' bindinput="businessNumberHandle" value='{{businessNumber}}' placeholder-class='placeholder'></input>
     </view>
     <view class='title flex'>
       <text class='color font_18 margin_10'>请按照营业执照上的信息填写，仅支持数字、字母、汉字，如410884543048474（1-1）请输入：410884543048474</text>
@@ -47,7 +47,7 @@
       <view class='margin_r_10 flex_a input_w'>
         <text class='font_24'>字号名称</text>
       </view>
-      <input placeholder='请填写营业执照上的字号名称' type="number" bindinput="nameNameHandle" value='{{nameName}}'  placeholder-class='placeholder'></input>
+      <input placeholder='请填写营业执照上的字号名称' class='width_100' bindinput="businessNameHandle" value='{{businessName}}'  placeholder-class='placeholder'></input>
     </view>
     <view class='title flex'>
       <text class='color font_18 margin_10'>企业执照请填写法人代表，个体户请填写经营者姓名</text>
@@ -59,13 +59,13 @@
       <view class='margin_r_10 flex_a input_w'>
         <text class='font_24'>机构代码</text>
       </view>
-      <input placeholder='请与组织机构代码证上保持一致' type="number" bindinput="mechanismCodeHandle" value='{{mechanismCode}}'   placeholder-class='placeholder'></input>
+      <input placeholder='请与组织机构代码证上保持一致' class='width_100' bindinput="organizationNumberHandle" value='{{organizationNumber}}'   placeholder-class='placeholder'></input>
     </view>
         <view class="flex_a input_h2">
       <view class='margin_r_10 flex_a input_w'>
         <text class='font_24'>机构名称</text>
       </view>
-      <input placeholder='请填写组织机构代码证名称' type="number" bindinput="mechanismNameHandle" value='{{mechanismName}}'  placeholder-class='placeholder'></input>
+      <input placeholder='请填写组织机构代码证名称' class='width_100' bindinput="organizationNameHandle" value='{{organizationName}}' placeholder-class='placeholder'></input>
     </view>
 
 </view>

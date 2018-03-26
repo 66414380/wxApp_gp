@@ -4,8 +4,8 @@
       <text class='font_24'>{{name}}</text>
     </view>
     <view class='flex_a' >
-      <text class='font_24 color_9' wx:if="{{image === ''}}">必填，请上传</text>
-      <icon type="success" size="20" color="green" wx:if="{{image !== ''}}"/>
+      <text class='font_24 color_9' wx:if="{{pic === ''}}">必填，请上传</text>
+      <icon type="success" size="20" color="green" wx:if="{{pic !== ''}}"/>
     <image class=' image ' mode="widthFix" src="../../images/icon2.png"></image>
     </view>
   </view>

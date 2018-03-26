@@ -52,6 +52,10 @@
 
 }
 
+.wm_img{
+  width: 88rpx; height: 88rpx;
+}
+
 .boss_button text {
   color: white
 }

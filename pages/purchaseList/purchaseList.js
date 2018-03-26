@@ -46,7 +46,37 @@ Page({
     })
   },
   bossHandle: function () {
-    console.log(1342)
+    app.xhr('POST', '?controller=boss&action=getRegistStatus', { userId: storage.get_s('userId') }, '', (res) => {
+      if (res.data.errcode === 0) {
+
+        if (res.data.data.status === 0){
+       wx.navigateTo({
+         url: '../storeApplication/storeApplication',
+       })
+        }
+        if (res.data.data.status === 1) {
+          wx.showToast({
+            title: '已经审核通过',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+        if (res.data.data.status === 2) {
+          wx.showToast({
+            title: '审核中',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+
+      }else{
+        wx.showToast({
+          title: res.data.errmsg,
+          icon: 'none',
+          duration: 2000
+        })
+      }
+    })
   },
   toSearch: function () {
     wx.navigateTo({

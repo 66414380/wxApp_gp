@@ -41,6 +41,7 @@ Page({
   },
   onLoad: function (options) {
     app.xhr('POST', '?controller=boss&action=getPayUrl', {}, '', (res) => {
+      console.log(res)
       if (res.data.errcode === 0) {
         this.setData({ img_url:res.data.data})
       } else {

@@ -40,8 +40,8 @@ Page({
 
   },
   onLoad: function (options) {
+    wx.showNavigationBarLoading()
     app.xhr('POST', '?controller=boss&action=getPayUrl', {}, '', (res) => {
-      console.log(res)
       if (res.data.errcode === 0) {
         this.setData({ img_url:res.data.data})
       } else {
@@ -51,6 +51,7 @@ Page({
           duration: 2000
         })
       }
+      wx.hideNavigationBarLoading()
     })
   },
 

@@ -302,13 +302,14 @@ Page({
     wx.showNavigationBarLoading()
     this.getX1Order(userId, this.data.p, (cbRes) => {
       if (cbRes.data.errcode === 0) {
+        this.setData({ boss: cbRes.data.data.boss, ali: cbRes.data.data.ali})
         if (cbRes.data.data.list.length === 0) {
           this.setData({ noRes: '暂无记录' })
         } else {
           if (cbRes.data.data.pagecount === 1) {
             this.setData({ canScroll: false, footTitle: '以上是全部吃饭记录' })
           }
-          this.setData({ list: cbRes.data.data.list, count_price: cbRes.data.data.money, count: cbRes.data.data.count, totalPage: cbRes.data.data.pagecount, boss: cbRes.data.data.boss, ali: cbRes.data.data.ali })
+          this.setData({ list: cbRes.data.data.list, count_price: cbRes.data.data.money, count: cbRes.data.data.count, totalPage: cbRes.data.data.pagecount })
         }
       } else {
         wx.showToast({

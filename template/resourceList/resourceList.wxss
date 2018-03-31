@@ -52,6 +52,12 @@
 
 }
 
+.boss_button_position{
+position: absolute;
+bottom: 0;
+left: 0
+}
+
 .wm_img{
   width: 88rpx; height: 88rpx;
 }

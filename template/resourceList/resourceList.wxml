@@ -12,7 +12,11 @@
             <text class='font_24'>{{item.brandName}}</text>
             <text class='font_18 color_9 split'>{{item.storeName}}</text>
           </view>
-          <view>
+          <view class='flex_a'>
+            <!-- 0没有，1微信，2支付宝 -->
+            <image style="width: 60rpx; height: 60rpx;" mode="widthFix" wx:if="{{item.type === 1}}" src="../../images/wx.png"></image>
+            <image style="width: 60rpx; height: 60rpx;" mode="widthFix" wx:if="{{item.type === 2}}" src="../../images/aliPay.jpg"></image>
+
             <text class='font_48'>￥{{item.price}}</text>
           </view>
         </view>
@@ -36,7 +40,8 @@
             <text class='font_24'>{{item.storeName}}</text>
           </view>
           <view class='flex_a'>
-            <!-- <image style="width: 50rpx; height: 50rpx;" mode="widthFix" src="{{item.storeLogo}}"></image> -->
+            <image style="width: 60rpx; height: 60rpx;" mode="widthFix" wx:if="{{item.platform === '美团'}}" src="../../images/mt.png"></image> 
+            <image style="width: 60rpx; height: 60rpx;" mode="widthFix" wx:if="{{item.platform === '饿了么'}}" src="../../images/elm.png"></image> 
             <text class='font_48'>￥{{item.price}}</text>
           </view>
         </view>
@@ -93,6 +98,13 @@
 
   <view class='flex' style='margin-top:420rpx' wx:if='{{list.length === 0}}'>
     <text class='font_24'>{{noRes}}</text>
+  </view>
+
+  <view class='boss_button_position width_100 flex' wx:if='{{boss === 1 && list.length === 0}}'>
+    <view class='boss_button flex' bindtap='bossHandle'>
+      <text class='font_24'>我要款易服务</text>
+
+    </view>
   </view>
 
 </template>

@@ -46,7 +46,7 @@
 <view class='box' wx:if="{{ali === 1 || ali === ''}}"></view>
 <view class='box_ali' wx:if='{{ali === 0}}'></view>
 <import src="../../template/resourceList/resourceList" />
-<template is="resourceList" data="{{selected,list,footTitle,noRes,boss,ali}}" />
+<template is="resourceList" data="{{selected,list,footTitle,noRes,boss,ali,canScroll,totalPage}}" />
 
 
 <view bindtap='close' style="display:{{display}};height: {{height}}px; width: {{width}}px;background-color: #C2C2C2;position: absolute;left: 0;top: 0;z-index: 100;background-color:rgba(0,0,0,.5)">

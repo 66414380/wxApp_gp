@@ -21,7 +21,7 @@ Page({
     list: [],
     count: '',
     count_price: '',
-    p: { page: 1, pagesize: 20 },
+    p: { page: 1, pagesize: 10 },
     totalPage: '',
     canScroll: true,
     footTitle: '',
@@ -151,7 +151,7 @@ Page({
   clickTop: function (e) {
     if (this.data.canClickTop === true) {
 
-      this.setData({ selected: e.currentTarget.dataset.id, canScroll: true, p: { page: 1, pagesize: 20 }, count: '', count_price: '', list: [], footTitle: '', noRes: '', canClickTop: false, boss: '', ali: '' })
+      this.setData({ selected: e.currentTarget.dataset.id, canScroll: true, p: { page: 1, pagesize: 10 }, count: '', count_price: '', list: [], footTitle: '', noRes: '', canClickTop: false, boss: '', ali: '' })
 
       if (e.currentTarget.dataset.id === 0) {
         this.tabAnimation(0)
@@ -430,7 +430,6 @@ Page({
     if (this.data.canScroll == true && this.data.totalPage > 1) {
       let page = this.data.p.page + 1
       this.setData({ canScroll: false, p: { page, pagesize: this.data.p.pagesize } })
-
 
       if (this.data.selected === 0 && this.data.totalPage >= page) {
         wx.showNavigationBarLoading()

@@ -39,7 +39,7 @@
 
 .ressource_last{
   margin-top: 50rpx;
-  height: 30rpx
+  height: 60rpx
 }
 
 .boss_button{

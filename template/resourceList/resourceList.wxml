@@ -40,8 +40,8 @@
             <text class='font_24'>{{item.storeName}}</text>
           </view>
           <view class='flex_a'>
-            <image style="width: 60rpx; height: 60rpx;" mode="widthFix" wx:if="{{item.platform === '美团'}}" src="../../images/mt.png"></image> 
-            <image style="width: 60rpx; height: 60rpx;" mode="widthFix" wx:if="{{item.platform === '饿了么'}}" src="../../images/elm.png"></image> 
+            <image style="width: 60rpx; height: 60rpx;" mode="widthFix" wx:if="{{item.platform === '美团'}}" src="../../images/mt.png"></image>
+            <image style="width: 60rpx; height: 60rpx;" mode="widthFix" wx:if="{{item.platform === '饿了么'}}" src="../../images/elm.png"></image>
             <text class='font_48'>￥{{item.price}}</text>
           </view>
         </view>
@@ -85,8 +85,20 @@
     </view>
   </block>
   <view class='flex_f flex_a ressource_last font_18' wx:if="{{list.length !== 0}}">
+
+    <view class='flex_a' wx:if="{{canScroll === true && footTitle === '' && totalPage > 1}}">
+    <image style="width: 40rpx; height: 40rpx" src="../../images/up.png"></image>
+      <text class='font_24 margin_l_10'>往上拉加载更多</text>
+    </view>
+
+    <view class='flex_a' wx:if="{{canScroll === false && footTitle === ''  && totalPage > 1}}">
+    <image style="width: 40rpx; height: 40rpx" src="../../images/loading.gif"></image>
+      <text class='font_24 margin_l_10'>加载中请稍候</text>
+    </view>
+
+
     <view>
-      <text>{{footTitle}}</text>
+      <text class='font_24'>{{footTitle}}</text>
     </view>
 
     <view class='boss_button' wx:if='{{boss === 1}}' bindtap='bossHandle'>

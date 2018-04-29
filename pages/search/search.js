@@ -14,7 +14,7 @@ Page({
     end_time: '',
     selected: 0,
     list: [],
-    p: { page: 1, pagesize: 20 },
+    p: { page: 1, pagesize: 10 },
     totalPage: '',
     canScroll: true,
     footTitle: '',
@@ -22,7 +22,7 @@ Page({
     
   },
   search: function () {
-    this.setData({ canScroll: true, p: { page: 1, pagesize: 20 }, list: [], footTitle: '', noRes: '' })
+    this.setData({ canScroll: true, p: { page: 1, pagesize: 10 }, list: [], footTitle: '', noRes: '' })
 
     let [yyyyStart, mthStart, ddStart] = this.data.dateStart.split('-')
     let [hhStart, mmStart] = this.data.timeStart.split(':')

@@ -48,4 +48,4 @@
 
 <view class='box'></view>
 <import src="../../template/resourceList/resourceList" />
-<template is="resourceList" data="{{selected,list,footTitle,noRes}}" />
+<template is="resourceList" data="{{selected,list,footTitle,noRes,canScroll,totalPage}}" />
